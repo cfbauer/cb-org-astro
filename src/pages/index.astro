@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Layout from '../layouts/BlogPost.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
 ---
 
 <Layout
@@ -11,7 +12,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	description="Introduction to me"
 	pubDate={new Date('September 28 2023')}
 	heroImage="/blog-placeholder-about.jpg"
->
+	chrisImage="../images/chris.jpeg"
+	chrisImageAlt="A picture of Chris Bauer, blue eyes, light skin, smiling"	
+	>
+
 	<p>I created my first website about my favorite punk bands a long time ago. I've since spent time as a project manager at a web agency, a designer for a rap record label, and a freelancer doing all of the above at once. I'm currently making awesome websites as a front-end developer at CivicActions.</p>
 
 	<p>I love web development because of its elegant combination of creativity and analytic thinking.</p>
