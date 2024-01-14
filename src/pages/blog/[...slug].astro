@@ -15,6 +15,9 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<BlogPost {...post.data}>
+<BlogPost {...post.data}
+chrisImage="../images/chris.jpeg"
+chrisImageAlt="A picture of Chris Bauer, blue eyes, light skin, smiling"
+>
 	<Content />
 </BlogPost>
