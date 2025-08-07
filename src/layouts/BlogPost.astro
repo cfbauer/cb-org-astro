@@ -6,11 +6,17 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 
 import { Image } from 'astro:assets';
-const images = import.meta.glob("../images/*");
+// const images = import.meta.glob("../images/*");
 
-type Props = CollectionEntry<'blog'>['data'];
+import chrisImg from '../images/chris.jpeg';
 
-const { title, description, pubDate, updatedDate, chrisImage, chrisImageAlt } = Astro.props;
+
+type Props = CollectionEntry<'blog'>['data'] & {
+	chrisImage?: string;
+	chrisImageAlt?: string;
+};
+
+const { title, description, pubDate, updatedDate, heroImage, chrisImage, chrisImageAlt } = Astro.props;
 ---
 
 <html lang="en">
@@ -61,8 +67,17 @@ const { title, description, pubDate, updatedDate, chrisImage, chrisImageAlt } = 
 		<Header />
 		<main>
 			<article>
+				<!-- If hero image exists in frontmatter, show it. -->
+				<!-- Else if chrisImage prop is passed, show that. -->
+				<!-- Else, show default chris image. -->
 				<div class="hero-image">
-					<Image src={images[chrisImage]()} alt="{chrisImageAlt}" width="350" />
+					{heroImage ? (
+						<img src={heroImage} alt="" width="720" height="360" />
+					) : chrisImage ? (
+						<Image src={chrisImg} alt={chrisImageAlt || "Chris Bauer"} width="350" />
+					) : (
+						<Image src={chrisImg} alt="Chris Bauer" width="350" />
+					)}
 				</div>
 				<div class="prose">
 					<div class="title">
