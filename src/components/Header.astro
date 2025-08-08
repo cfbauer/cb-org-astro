@@ -1,18 +1,12 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
-
-import { Image } from 'astro:assets';
-import logo from "../images/logo.png"; // Image is 1600x900
+import Logo from "../images/cb-logo.svg";
 ---
 
 <header>
 	<nav>
-		<Image 
-			src={logo}
-			alt="Circle logo with the letters C and B"
-			width="50"
-			 />
+		<Logo class="logo" width="50" height="50" />
 		<h2><a href="/">{SITE_TITLE}</a></h2>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>

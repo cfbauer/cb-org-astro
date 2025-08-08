@@ -5,8 +5,8 @@
  */
 
 :root {
-	--accent: #7cb342;
-	--accent-dark: #05668d;
+	--accent: rgb(172 0 140);
+	--accent-dark: #87006D;
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
@@ -151,4 +151,9 @@ hr {
 	clip-path: inset(50%);
 	/* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
+}
+
+/* Custom Styles */
+.logo {
+   color: var(--accent);
 }
