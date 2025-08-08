@@ -1,7 +1,8 @@
 ---
-title: 'The wackiest time capsules'
+title: 'Websites are the wackiest time capsules'
 description: 'Lorem ipsum dolor sit amet'
 pubDate: 'August 08 2025'
+heroImage: './cb-org-screenshot.png'
 ---
 
 Like a lot (likely most) of web developers, I keep folders on my computer for each website I create. And for me at least, these folders are like time capsules to the past. Old tech, bad code, outdated design trends (hello gradient borders) take me back to a bygone era. Not just of the web, but of my own personal journey breathing life to all kinds of wacky things.
@@ -10,7 +11,7 @@ In these folders, live my old personal websites. My personal projects have alway
 
 Because my personal websites serve this role, I tend to redo them when I need a reason to try something new. This has been true for my very first website, and is still true today on this page you're reading. Unfortunately I stopped numbering them at chris-bauer-4, so when I was creating this newest wackyness, I started counting them all. Or at least trying to. 
 
-So lets go public with this. And I'll add a few details based on what I remember about each. 
+So lets go public with this. And I'll add a few details with what I remember about each. 
 
 ## Geocities
 
