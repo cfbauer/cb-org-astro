@@ -18,7 +18,8 @@ const description = `A collection of photo albums from ${SITE_TITLE}`;
 			.gallery {
 				display: grid;
 				grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-				gap: 1rem;
+				gap: 3rem;
+				text-align: center;
 			}
 			.gallery a {
 				text-decoration: none;
@@ -32,13 +33,15 @@ const description = `A collection of photo albums from ${SITE_TITLE}`;
 				transform: scale(1.05);
 			}
 			.gallery h2 {
-				margin-top: 0.5rem;
+				margin: 0.5rem 0;
+
 				font-size: 1.25rem;
 				color: rgb(var(--black));
 			}
 			.gallery p {
 				font-size: 1rem;
 				color: rgb(var(--gray));
+				margin-top: .5rem;
 			}
 		</style>
 	</head>
@@ -50,8 +53,8 @@ const description = `A collection of photo albums from ${SITE_TITLE}`;
 			<div class="gallery">
 				{
 					albums.map((album) => (
-
-						<a href={`/gallery/${album.id.split('/')[0]}/`}>
+						<a href={`/gallery/${album.id.split('/')[0]}/`} class="album">
+							{/* Debugging line to check album data */}
 							<Image src={album.data.cover} alt={album.data.title} width={500} height={300} />
 							<h2>{album.data.title}</h2>
 							{album.data.description && <p>{album.data.description}</p>}
