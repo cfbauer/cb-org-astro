@@ -14,7 +14,7 @@ type Props = CollectionEntry<'blog'>['data'] & {
 	chrisImageAlt?: string;
 };
 
-const { title, description, pubDate, updatedDate, heroImage, chrisImage, chrisImageAlt } = Astro.props;
+const { title, description, pubDate, hideDate, updatedDate, heroImage, chrisImage, chrisImageAlt } = Astro.props;
 ---
 
 <html lang="en">
@@ -79,16 +79,17 @@ const { title, description, pubDate, updatedDate, heroImage, chrisImage, chrisIm
 				</div>
 				<div class="prose">
 					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
+						{!hideDate && 
+							<div class="date">
+								<FormattedDate date={pubDate} />
+								{updatedDate && (
 									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
+									Last updated on <FormattedDate date={updatedDate} />
 									</div>
-								)
-							}
-						</div>
+									)
+								}
+							</div>
+						}
 						<h1>{title}</h1>
 						<hr />
 					</div>
