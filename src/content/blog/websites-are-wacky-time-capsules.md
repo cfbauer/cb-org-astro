@@ -25,7 +25,7 @@ I also was learning css, php, and WordPress all at the same time, so it was an a
 
 ## WordPress #2
 
-Still no menu, but on this one I loved the pattern on top of a gradient, although a client told me the leaf looking thing was supposed to point up or down, not to the side. I also setup a sprite so the menu icons turned to color WITHOUT A HICCUP WAITING FOR A MOUSEOVER IMAGE TO LOAD!
+Still no menu system, but on this one I loved the pattern on top of a gradient, although a client told me the leaf looking thing was supposed to point up or down, not to the side. I also setup a sprite so the menu icons turned to color WITHOUT A HICCUP WAITING FOR A MOUSEOVER IMAGE TO LOAD!
 
 ## Drupal #1
 
