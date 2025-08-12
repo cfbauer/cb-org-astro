@@ -11,7 +11,17 @@ const blog = defineCollection({
 		updatedDate: z.coerce.date().optional(),
 		heroImage: image().optional(),
 		draft: z.boolean().optional(),
+		hideDate: z.boolean().optional(),
 	}),
 });
 
-export const collections = { blog };
+const albums = defineCollection({
+	type: 'data',
+	schema: ({ image }) => z.object({
+		title: z.string(),
+		description: z.string().optional(),
+		cover: image(),
+	})
+});
+
+export const collections = { blog, albums };

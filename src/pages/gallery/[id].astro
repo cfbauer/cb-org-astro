@@ -1,0 +1,47 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import { getAlbumImages } from '../../uils/albums';
+import { Image } from 'astro:assets';
+import BlogPost from '../../layouts/BlogPost.astro';
+
+export async function getStaticPaths() {
+    const albums = await getCollection('albums');
+    return albums.map((album) => ({
+        params: { id: album.id.split('/')[0] },
+        props: { album },
+    }));
+}
+
+const { id } = Astro.params;
+const { album } = Astro.props;
+const images = await getAlbumImages(id);
+
+---
+<BlogPost 
+    title={album.data.title} 
+    description={album.data.description || ''}
+    heroImage={album.data.cover}
+    pubDate={new Date()}
+    hideDate={true}
+>
+    <div class="photo-gallery">
+        {images.map(image => (
+            <Image 
+                src={image} 
+                alt={`Image from ${album.data.title} album`}
+                format="avif"
+                quality={50}
+                loading="lazy"
+                class="photo"
+                width={500}
+                 />
+        ))}
+    </div>
+</BlogPost>
+<style>
+    .photo-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+</style>
