@@ -3,6 +3,7 @@ import { getCollection, getEntry } from 'astro:content';
 import { getAlbumImages } from '../../uils/albums';
 import { Image } from 'astro:assets';
 import BlogPost from '../../layouts/BlogPost.astro';
+import 'glightbox/dist/css/glightbox.min.css';
 
 export async function getStaticPaths() {
     const albums = await getCollection('albums');
@@ -26,16 +27,18 @@ const images = await getAlbumImages(id);
 >
     <div class="photo-gallery">
         {images.map(image => (
-            <Image 
-                src={image} 
-                alt={`Image from ${album.data.title} album`}
-                format="avif"
-                quality={50}
-                loading="lazy"
-                class="photo"
-                width={500}
-                height={300}
-            />
+            <a href={image.src} class="glightbox" data-gallery="gallery">
+                <Image 
+                    src={image} 
+                    alt={`Image from ${album.data.title} album`}
+                    format="avif"
+                    quality={50}
+                    loading="lazy"
+                    class="photo"
+                    width={500}
+                    height={300}
+                />
+            </a>
         ))}
     </div>
 </BlogPost>
@@ -46,3 +49,9 @@ const images = await getAlbumImages(id);
         gap: 1rem;
     }
 </style>
+<script>
+    import GLightbox from 'glightbox';
+    const lightbox = GLightbox({
+        selector: '.glightbox'
+    });
+</script>

@@ -73,7 +73,7 @@ const { title, description, pubDate, hideDate, updatedDate, heroImage, chrisImag
 				<!-- Else, show default chris image. -->
 				<div class="hero-image">
 					{heroImage ? (
-						<Image src={heroImage} alt="" width="720" height="360" />
+						<Image src={heroImage} alt="Hero Image" width="720" height="360" />
 					) : chrisImage ? (
 						<Image src={chrisImg} alt={chrisImageAlt || "Chris Bauer"} width="350" />
 					) : (
