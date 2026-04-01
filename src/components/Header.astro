@@ -10,7 +10,22 @@ import Logo from "../images/cb-logo.svg";
       <Logo class="logo" width="50" height="50" />
     </div>
     <h2><a href="/">{SITE_TITLE}</a></h2>
-    <div id="mobile-nav" class="internal-links" popover>
+    <div class="internal-links">
+      <HeaderLink href="/">Home</HeaderLink>
+      <HeaderLink href="/blog">Blog</HeaderLink>
+      <HeaderLink href="/gallery">Photo Gallery</HeaderLink>
+    </div>
+
+    <div id="mobile-nav" popover>
+      <button
+        popovertarget="mobile-nav"
+        popovertargetaction="hide"
+        aria-label="close menu"
+        class="menu-toggle menu-close"
+      >
+        X
+      </button>
+
       <HeaderLink href="/">Home</HeaderLink>
       <HeaderLink href="/blog">Blog</HeaderLink>
       <HeaderLink href="/gallery">Photo Gallery</HeaderLink>
@@ -28,12 +43,12 @@ import Logo from "../images/cb-logo.svg";
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="M4 7H20" stroke="black" stroke-width="2" stroke-linecap="round"
+        <path d="M4 7H20" stroke="black" stroke-width="4" stroke-linecap="round"
         ></path>
         <path
           d="M4 17H14"
           stroke="black"
-          stroke-width="2"
+          stroke-width="4"
           stroke-linecap="round"></path>
       </svg>
     </button>
@@ -80,7 +95,16 @@ import Logo from "../images/cb-logo.svg";
     flex: 1;
     justify-content: flex-end;
   }
-  .internal-links:popover-open {
+  #mobile-nav {
+    display: none;
+    translate: 0 -100%;
+    transition:
+      translate 0.3s ease,
+      overlay 0.3s ease allow-discrete,
+      display 0.3s ease allow-discrete;
+  }
+
+  #mobile-nav:popover-open {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -94,13 +118,14 @@ import Logo from "../images/cb-logo.svg";
     background: rgba(255, 255, 255, 0.95);
     padding: 10rem 5rem;
     box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+    translate: 0 0;
     transition:
       translate 0.3s ease,
       overlay 0.3s ease allow-discrete,
       display 0.3s ease allow-discrete;
   }
   @starting-style {
-    .internal-links {
+    #mobile-nav:popover-open {
       translate: 0 -100%;
     }
   }
@@ -117,6 +142,16 @@ import Logo from "../images/cb-logo.svg";
     }
     .menu-toggle {
       display: block;
+      appearance: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .menu-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 3rem;
     }
     .internal-links {
       display: none;
