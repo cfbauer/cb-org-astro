@@ -73,6 +73,7 @@ import Logo from "../images/cb-logo.svg";
   nav {
     display: flex;
     align-items: center;
+    padding: 0.5rem 0;
   }
   nav a {
     padding: 1em 0.5em;
@@ -86,6 +87,7 @@ import Logo from "../images/cb-logo.svg";
   }
   .nav-left {
     flex: 1;
+    line-height: 0;
   }
   .logo {
     color: var(--accent);
@@ -116,7 +118,7 @@ import Logo from "../images/cb-logo.svg";
     font-size: 36px;
     font-weight: bolder;
     background: rgba(255, 255, 255, 0.95);
-    padding: 10rem 5rem;
+    padding: 10rem 4rem;
     box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
     translate: 0 0;
     transition:
@@ -149,9 +151,10 @@ import Logo from "../images/cb-logo.svg";
     }
     .menu-close {
       position: absolute;
-      top: 1rem;
+      top: 0.5rem;
       right: 1rem;
-      font-size: 3rem;
+      font-size: 2rem;
+      font-weight: bold;
     }
     .internal-links {
       display: none;
