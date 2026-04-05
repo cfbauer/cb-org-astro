@@ -98,15 +98,6 @@ import Logo from "../images/cb-logo.svg";
     justify-content: flex-end;
   }
   #mobile-nav {
-    display: none;
-    translate: 0 -100%;
-    transition:
-      translate 0.3s ease,
-      overlay 0.3s ease allow-discrete,
-      display 0.3s ease allow-discrete;
-  }
-
-  #mobile-nav:popover-open {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -120,11 +111,15 @@ import Logo from "../images/cb-logo.svg";
     background: rgba(255, 255, 255, 0.95);
     padding: 10rem 4rem;
     box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
-    translate: 0 0;
+    translate: 0 -100%;
     transition:
       translate 0.3s ease,
       overlay 0.3s ease allow-discrete,
       display 0.3s ease allow-discrete;
+  }
+
+  #mobile-nav:popover-open {
+    translate: 0 0;
   }
   @starting-style {
     #mobile-nav:popover-open {
